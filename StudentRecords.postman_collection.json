@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "Student Records API",
+    "description": "SECJ4383 Assignment 2 - TECH TITANS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create student",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Aisha Khan\",\n  \"matricNo\": \"A22EC1234\",\n  \"program\": \"Computer Science\",\n  \"email\": \"aisha@graduate.utm.my\",\n  \"cgpa\": 3.7\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"]
+        }
+      }
+    },
+    {
+      "name": "List all students",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students"]
+        }
+      }
+    },
+    {
+      "name": "Get student by id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update student",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mohammad Areeb\",\n  \"matricNo\": \"A22EC4035\",\n  \"program\": \"Cyber Security\",\n  \"email\": \"areeb@graduate.utm.my\",\n  \"cgpa\": 3.8\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete student",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/api/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "1"]
+        }
+      }
+    },
+    {
+      "name": "Search by program",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?program=Software",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "search"],
+          "query": [
+            { "key": "program", "value": "Software" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search by name",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?name=areeb",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "students", "search"],
+          "query": [
+            { "key": "name", "value": "areeb" }
+          ]
+        }
+      }
+    }
+  ]
+}
