@@ -69,6 +69,9 @@ mvnw.cmd spring-boot:run
 
 The application starts at `http://localhost:8080`.
 
+Open `http://localhost:8080` in a browser to use the bundled **web UI**, which lets you
+register, list, search, update, and delete students against the same REST API.
+
 To run the tests:
 
 ```bash
