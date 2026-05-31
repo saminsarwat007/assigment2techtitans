@@ -130,6 +130,12 @@ Set the request body to **raw / JSON** for POST and PUT requests.
    or `GET http://localhost:8080/api/students/search?name=areeb`
 
 A ready-to-import Postman collection is included: `StudentRecords.postman_collection.json`.
+It contains test assertions (status-code checks) for every request. You can run the whole
+collection from the command line with Newman (Postman's official CLI):
+
+```bash
+newman run StudentRecords.postman_collection.json --env-var baseUrl=http://localhost:8080
+```
 
 ## Example Error Responses
 
